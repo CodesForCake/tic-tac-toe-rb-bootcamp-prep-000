@@ -43,13 +43,13 @@ def valid_move?(board, index)
 end
 
 def turn(board)
-  /*puts "Please enter 1-9:"*/
+  
   input=input_to_index(gets.strip)
   if valid_move?(board, input)
     move(board, input, current_player(board))
-    /*display_board(board)*/
+    #display_board(board)
   else
-    /*puts "Please try again with 1-9:"*/
+    
     turn(board)
   end
 end
@@ -127,7 +127,7 @@ end
 
 def play(board)
   if won?(board)
-    puts "Congratulations " + current_player(board) + "!"
+    puts "Congratulations " + winner(board) + "!"
   elsif draw?(board)
     puts "Cat's Game!"
   elsif !(over?(board))
