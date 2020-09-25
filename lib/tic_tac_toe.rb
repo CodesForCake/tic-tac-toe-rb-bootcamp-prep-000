@@ -49,7 +49,7 @@ def turn(board)
     move(board, input, current_player(board))
     #display_board(board)
   else
-    
+    #puts "Please try again with 1-9:
     turn(board)
   end
 end
