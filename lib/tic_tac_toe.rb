@@ -126,14 +126,13 @@ def winner(board)
 end 
 
 def play(board)
-  while !(over?(board))
-    if won?(board)
-      puts "Congratulations!" + current_player
-    elsif draw?(board)
-      puts "Cat's Game!"
-    else
-      turn(board)
-    end
+  if won?(board)
+    puts "Congratulations!" + current_player
+  elsif draw?(board)
+    puts "Cat's Game!"
+  elsif !(over?(board))
+    turn(board)
+    play(board)
   end
 end
 
@@ -141,14 +140,3 @@ end
 def position_taken?(board, index)
   !(board[index].nil? || board[index] == " ")
 end
-
-
-
-
-
-
-
-
-
-
-
